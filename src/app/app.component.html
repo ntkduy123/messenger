@@ -1,20 +1,95 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+            
+<!-- Page container -->
+<div class="gx-container">
+
+    <!-- Main Container -->
+    <div class="gx-main-container">
+
+        <!-- Main Content -->
+        <div class="gx-main-content">
+            <!--gx-wrapper-->
+            <div class="gx-wrapper">
+
+                <div class="gx-module chat-module">
+                    <div id="gxChatModuleSidebar" class="chat-sidenav">
+                        <div class="chat-sidenav-main">
+                            <div class="chat-sidenav-header">
+                                <div class="chat-user-hd">
+                                    <div class="chat-avatar mr-3">
+                                        <div class="chat-avatar-mode">
+                                            <img src="images/userAvatar/domnic-harris.jpg" class="user-avatar size-50"
+                                                  alt="">
+                                            <span class="chat-mode online"></span>
+                                        </div>
+                                    </div>
+                                    <div class="module-user-info d-flex flex-column justify-content-center">
+                                        <div class="module-title">
+                                            <h5 class="mb-0">Robert Johnson</h5>
+                                        </div>
+                                        <div class="module-user-detail">
+                                            <a href="javascript:void(0)" class="text-muted">robert@example.com</a>
+                                        </div>
+                                    </div>
+
+                                    <a class="ml-auto action-btn">
+                                        <i class="zmdi zmdi-more-vert"></i>
+                                    </a>
+                                </div>
+
+                                <div class="search-wrapper">
+                                    <div class="search-bar right-side-icon bg-transparent">
+                                        <div class="form-group">
+                                            <input class="form-control border-0"
+                                                    placeholder="Search or start new chat" value="" type="search">
+                                            <button class="search-icon">
+                                                <i class="zmdi zmdi-search zmdi-hc-lg"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <ul class="nav tab-link nav-justified" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#chatList" role="tab"
+                                            aria-controls="chatList" aria-selected="true">Chats</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#contacts" role="tab"
+                                            aria-controls="contacts" aria-selected="true">Contacts</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="chat-sidenav-content">
+                                <div class="tab-content">
+                                    <app-users></app-users>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <app-chat-box style="width: 100%;"></app-chat-box>
+                </div>
+
+
+            </div>
+            <!--/gx-wrapper-->
+
+            <!-- Footer -->
+            <!-- <footer class="gx-footer">
+                <div class="d-flex flex-row justify-content-between">
+                    <p> Copyright Company Name © 2018</p>
+                    <a href="https://themeforest.net/item/jumbo-admin-responsive-admin-dashboard-template/21368029" target="_blank" class="btn-link text-uppercase">Buy Now</a>
+                </div>
+            </footer> -->
+            <!-- /footer -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /main container -->
+
+</div>
+<!-- /page container -->
