@@ -1,5 +1,5 @@
 <div class="chat-list-scroll" style="position: relative;">
   <div class="chat-main-content">
-    <app-chat-item></app-chat-item>
+    <app-chat-item *ngFor="let chatMessage of chatMessageList" [chatMessage]="chatMessage"></app-chat-item>
   </div>
 </div>

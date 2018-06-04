@@ -1,7 +1,60 @@
-<div id="chatList" class="tab-pane active ps-custom-scrollbar" style="position: relative;">
-  <app-user-list></app-user-list>
-</div>
-  
-<div id="contacts" class="tab-pane ps-custom-scrollbar" style="position: relative;">
-  <app-user-list></app-user-list>
+<div class="chat-sidenav-main" (window:resize)="onResize($event)">
+  <div class="chat-sidenav-header" #chatSideNavHeader>
+      <div class="chat-user-hd">
+          <div class="chat-avatar mr-3">
+              <div class="chat-avatar-mode">
+                  <img src="http://demo.g-axon.com/jumbo-admin/images/userAvatar/domnic-harris.jpg" class="user-avatar size-50"
+                        alt="">
+                  <span class="chat-mode online"></span>
+              </div>
+          </div>
+          <div class="module-user-info d-flex flex-column justify-content-center">
+              <div class="module-title">
+                  <h5 class="mb-0">Robert Johnson</h5>
+              </div>
+              <div class="module-user-detail">
+                  <a href="javascript:void(0)" class="text-muted">robert@example.com</a>
+              </div>
+          </div>
+
+          <a class="ml-auto action-btn">
+              <i class=""></i>
+          </a>
+      </div>
+
+      <div class="search-wrapper">
+          <div class="search-bar right-side-icon bg-transparent">
+              <div class="form-group">
+                  <input class="form-control border-0"
+                          placeholder="Search or start new chat" value="" type="search">
+                  <button class="search-icon">
+                      <i class="fa fa-search"></i>
+                  </button>
+              </div>
+          </div>
+      </div>
+
+      <ul class="nav tab-link nav-justified" role="tablist">
+          <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#chatList" role="tab"
+                  aria-controls="chatList" aria-selected="true">Chats</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#contacts" role="tab"
+                  aria-controls="contacts" aria-selected="true">Contacts</a>
+          </li>
+      </ul>
+  </div>
+
+  <div class="chat-sidenav-content" #chatSideNavContent style="overflow-y: scroll;">
+      <div class="tab-content">
+        <div id="chatList" class="tab-pane active ps-custom-scrollbar" style="position: relative;">
+          <app-user-list></app-user-list>
+        </div>
+          
+        <div id="contacts" class="tab-pane ps-custom-scrollbar" style="position: relative;">
+          <app-user-list></app-user-list>
+        </div>
+      </div>
+  </div>
 </div>

@@ -1,5 +1,3 @@
-
-            
 <!-- Page container -->
 <div class="gx-container">
 
@@ -13,60 +11,7 @@
 
                 <div class="gx-module chat-module">
                     <div id="gxChatModuleSidebar" class="chat-sidenav">
-                        <div class="chat-sidenav-main">
-                            <div class="chat-sidenav-header">
-                                <div class="chat-user-hd">
-                                    <div class="chat-avatar mr-3">
-                                        <div class="chat-avatar-mode">
-                                            <img src="images/userAvatar/domnic-harris.jpg" class="user-avatar size-50"
-                                                  alt="">
-                                            <span class="chat-mode online"></span>
-                                        </div>
-                                    </div>
-                                    <div class="module-user-info d-flex flex-column justify-content-center">
-                                        <div class="module-title">
-                                            <h5 class="mb-0">Robert Johnson</h5>
-                                        </div>
-                                        <div class="module-user-detail">
-                                            <a href="javascript:void(0)" class="text-muted">robert@example.com</a>
-                                        </div>
-                                    </div>
-
-                                    <a class="ml-auto action-btn">
-                                        <i class="zmdi zmdi-more-vert"></i>
-                                    </a>
-                                </div>
-
-                                <div class="search-wrapper">
-                                    <div class="search-bar right-side-icon bg-transparent">
-                                        <div class="form-group">
-                                            <input class="form-control border-0"
-                                                    placeholder="Search or start new chat" value="" type="search">
-                                            <button class="search-icon">
-                                                <i class="zmdi zmdi-search zmdi-hc-lg"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <ul class="nav tab-link nav-justified" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#chatList" role="tab"
-                                            aria-controls="chatList" aria-selected="true">Chats</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#contacts" role="tab"
-                                            aria-controls="contacts" aria-selected="true">Contacts</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="chat-sidenav-content">
-                                <div class="tab-content">
-                                    <app-users></app-users>
-                                </div>
-                            </div>
-                        </div>
+                        <app-users></app-users>
                     </div>
 
                     <app-chat-box style="width: 100%;"></app-chat-box>

@@ -1,4 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:100, 100i, 300, 300i, 400, 400i, 500, 500i, 700, 700i, 900, 900i");
     .gx-menu-icon .menu-icon {
@@ -8003,7 +8004,7 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
     max-width: 60px;
 }
 .chat-sidenav-content {
-    height: 100vh;
+    height: 70vh;
     background-color: #fff;
 }
 .chat-sidenav-title {
@@ -8199,7 +8200,8 @@ table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after
     border-top: solid 1px #e9ecef;
     padding: 16px;
     background-color: #fff;
-    width: 100%}
+    width: 100%;
+}
 .chat-main-footer .form-group {
     margin-bottom: 0;
 }

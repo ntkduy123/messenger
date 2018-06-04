@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chat-box-footer',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-box-footer.component.css']
 })
 export class ChatBoxFooterComponent implements OnInit {
+
+  @Input('sendMessage') sendMessage: Function;
 
   constructor() { }
 
