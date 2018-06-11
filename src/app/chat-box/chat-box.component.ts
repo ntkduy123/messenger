@@ -1,3 +1,4 @@
+import { ChatBoxService } from './shared/chat-box.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { ChatItemComponent } from './chat-item/chat-item.component';
@@ -21,18 +22,23 @@ export class ChatBoxComponent implements OnInit {
 
   public chatMessageList: ChatMessage[] = [];
 
-  constructor() { }
+  constructor(private chatBoxService: ChatBoxService) {
+    this.chatBoxService.connect();
+  }
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
-    const chatMessage = new ChatMessage('', '', 'English versions from the 1914 translation by H. Rackham', 'http://demo.g-axon.com/jumbo-admin/images/userAvatar/domnic-harris.jpg');
+    const chatMessage = new ChatMessage(
+      '',
+      '',
+      'English versions from the 1914 translation by H. Rackham', 'http://demo.g-axon.com/jumbo-admin/images/userAvatar/domnic-harris.jpg');
     this.chatMessageList.push(chatMessage);
   }
 
   onResize(event) {
     this.resizeChatContent(event);
   }
-  
+
   resizeChatContent(event) {
     const chatBoxHeaderHeight = this.chatBoxHeader.nativeElement.offsetHeight;
     const chatBoxFooterHeight = this.chatBoxFooter.nativeElement.offsetHeight;
@@ -47,14 +53,13 @@ export class ChatBoxComponent implements OnInit {
 
   sendMessage(event) {
     const chatItem = new ChatItemComponent();
-    console.log(chatItem);
     const textInput = event.currentTarget;
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
       const message = textInput.value;
       textInput.value = '';
       const chatMessage = new ChatMessage('', '', message, 'http://demo.g-axon.com/jumbo-admin/images/userAvatar/domnic-harris.jpg');
-      console.log(this.chatMessageList);
       this.chatMessageList.push(chatMessage);
+      this.chatBoxService.sendMessage(message);
     }
   }
 
