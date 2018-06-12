@@ -12,25 +12,19 @@ export class ChatBoxService {
 
   constructor() { }
 
-  connect() {
+  connect(onMessageReceived) {
     const socket = new SockJS('http://localhost:8080/ws');
     this.stompClient = Stomp.over(socket);
     console.log(this.stompClient);
 
-    this.stompClient.connect({}, this.onConnected.bind(this), this.onError);
-  }
+    this.stompClient.connect({}, () => {
+      this.stompClient.subscribe('/topic/public', onMessageReceived);
 
-  onConnected() {
-    this.stompClient.subscribe('/topic/public', this.onMessageReceived);
-
-    this.stompClient.send('/app/chat.addUser',
-        {},
-        JSON.stringify({sender: 'duynguyen', type: 'JOIN'})
-    );
-  }
-
-  onMessageReceived(payload) {
-    console.log(payload);
+      this.stompClient.send('/app/chat.addUser',
+          {},
+          JSON.stringify({sender: 'duynguyen', type: 'JOIN'})
+      );
+    }, this.onError);
   }
 
   onError() {

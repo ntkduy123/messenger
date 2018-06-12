@@ -1,10 +1,10 @@
 
-<div class="d-flex flex-nowrap chat-item flex-row-reverse">
+<div class="d-flex flex-nowrap chat-item {{ chatMessage.sender === 'duynguyen' ? 'flex-row-reverse' : '' }}">
   <img class="user-avatar"
         src="{{ chatMessage.avatar }}" alt="...">
   <div class="bubble">
       <div class="message">
-        {{ chatMessage.text }}
+        {{ chatMessage.content }}
       </div>
       <div class="time">3:03:28 PM</div>
   </div>

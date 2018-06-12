@@ -23,16 +23,11 @@ export class ChatBoxComponent implements OnInit {
   public chatMessageList: ChatMessage[] = [];
 
   constructor(private chatBoxService: ChatBoxService) {
-    this.chatBoxService.connect();
+    this.chatBoxService.connect(this.onMessageReceived.bind(this));
   }
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
-    const chatMessage = new ChatMessage(
-      '',
-      '',
-      'English versions from the 1914 translation by H. Rackham', 'http://demo.g-axon.com/jumbo-admin/images/userAvatar/domnic-harris.jpg');
-    this.chatMessageList.push(chatMessage);
   }
 
   onResize(event) {
@@ -57,9 +52,21 @@ export class ChatBoxComponent implements OnInit {
     if (event.keyCode === 13) {
       const message = textInput.value;
       textInput.value = '';
-      const chatMessage = new ChatMessage('', '', message, 'http://demo.g-axon.com/jumbo-admin/images/userAvatar/domnic-harris.jpg');
+      const avatar = 'http://demo.g-axon.com/jumbo-admin/images/userAvatar/domnic-harris.jpg';
+      const chatMessage = new ChatMessage('', message, avatar, 'CHAT', 'duynguyen');
       this.chatMessageList.push(chatMessage);
       this.chatBoxService.sendMessage(message);
+    }
+  }
+
+  onMessageReceived(payload) {
+    console.log(payload);
+    const message = JSON.parse(payload.body);
+
+    if (message.type === 'CHAT' && message.sender !== 'duynguyen') {
+      const avatar = 'http://demo.g-axon.com/jumbo-admin/images/userAvatar/domnic-harris.jpg';
+      const chatMessage = new ChatMessage('', message.content, avatar, 'CHAT', '');
+      this.chatMessageList.push(chatMessage);
     }
   }
 
