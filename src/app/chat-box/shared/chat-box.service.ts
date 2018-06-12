@@ -2,18 +2,21 @@ import { ChatMessage } from './../../shared/ChatMessage';
 import { Injectable } from '@angular/core';
 import * as SockJS from 'sockjs-client';
 import * as Stomp from 'stompjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatBoxService {
 
+  private baseUrl = environment.baseUrl;
+
   private stompClient;
 
   constructor() { }
 
   connect(onMessageReceived) {
-    const socket = new SockJS('http://localhost:8080/ws');
+    const socket = new SockJS(this.baseUrl + 'ws');
     this.stompClient = Stomp.over(socket);
     console.log(this.stompClient);
 
