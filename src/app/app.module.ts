@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
 import { ChatBoxModule } from './chat-box/chat-box.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ChatBoxModule } from './chat-box/chat-box.module';
   imports: [
     BrowserModule,
     UsersModule,
-    ChatBoxModule
+    ChatBoxModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

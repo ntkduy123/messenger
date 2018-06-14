@@ -1,11 +1,17 @@
-<div class="chat-module-box" (window:resize)="onResize($event)">
-    <div class="chat-box">
-        <div class="chat-box-main">
-            <div class="chat-main">
-                <app-chat-box-header #chatBoxHeader></app-chat-box-header>
-                <app-chat-box-content [chatMessageList]="chatMessageList" style="overflow-y: scroll;" #chatBoxContent></app-chat-box-content>
-                <app-chat-box-footer [sendMessage]="sendMessage.bind(this)" class="chat-footer" #chatBoxFooter></app-chat-box-footer>
+<div>
+    <div id="gxChatModuleSidebar" class="chat-sidenav">
+        <app-users></app-users>
+    </div>
+
+    <div class="chat-module-box" (window:resize)="onResize($event)">
+            <div class="chat-box">
+                <div class="chat-box-main">
+                    <div class="chat-main">
+                        <app-chat-box-header #chatBoxHeader></app-chat-box-header>
+                        <app-chat-box-content [chatMessageList]="chatMessageList" style="overflow-y: scroll;" #chatBoxContent></app-chat-box-content>
+                        <app-chat-box-footer [sendMessage]="sendMessage.bind(this)" class="chat-footer" #chatBoxFooter></app-chat-box-footer>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </div>

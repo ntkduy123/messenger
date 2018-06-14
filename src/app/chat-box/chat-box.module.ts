@@ -5,10 +5,12 @@ import { ChatBoxContentComponent } from './chat-box-content/chat-box-content.com
 import { ChatBoxHeaderComponent } from './chat-box-header/chat-box-header.component';
 import { ChatBoxFooterComponent } from './chat-box-footer/chat-box-footer.component';
 import { ChatBoxComponent } from './chat-box.component';
+import { UsersModule } from '../users/users.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    UsersModule
   ],
   declarations: [
     ChatItemComponent,

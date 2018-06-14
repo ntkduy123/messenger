@@ -8,16 +8,8 @@
         <div class="gx-main-content">
             <!--gx-wrapper-->
             <div class="gx-wrapper">
-
-                <div class="gx-module chat-module">
-                    <div id="gxChatModuleSidebar" class="chat-sidenav">
-                        <app-users></app-users>
-                    </div>
-
-                    <app-chat-box style="width: 100%;"></app-chat-box>
-                </div>
-
-
+                <!-- <app-login *ngIf="isLoggedin"></app-login> -->
+                <app-chat-box *ngIf="!isLoggedin" class="gx-module chat-module"></app-chat-box>
             </div>
             <!--/gx-wrapper-->
 
